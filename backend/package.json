@@ -1,0 +1,27 @@
+{
+  "name": "shopping-list-backend",
+  "version": "1.0.0",
+  "description": "A simple NestJS backend with GraphQL and a JSON file database.",
+  "scripts": {
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "build": "nest build"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/graphql": "^12.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/apollo": "^12.0.0",
+    "graphql": "^16.6.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.0.0",
+    "@nestjs/schematics": "^10.0.0",
+    "@nestjs/testing": "^10.0.0",
+    "@types/uuid": "^10.0.0",
+    "reflect-metadata": "^0.2.2",
+    "typescript": "^5.0.0"
+  }
+}

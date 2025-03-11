@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ShoppingItemType {
+  id: ID!
+  name: String!
+  quantity: Int!
+}
+
+type Query {
+  shoppingItems: [ShoppingItemType!]!
+}
+
+type Mutation {
+  createShoppingItem(name: String!, quantity: Int!): ShoppingItemType!
+  deleteShoppingItem(id: String!): String!
+}
