@@ -1,11 +1,14 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ShoppingList from "./components/shoppingList";
+import { ChakraProvider } from "@chakra-ui/react";
+import ShoppingList from "./components/shopping-list";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ShoppingList />
+    <ChakraProvider>
+      <ShoppingList />
+    </ChakraProvider>
   </QueryClientProvider>
 );
 

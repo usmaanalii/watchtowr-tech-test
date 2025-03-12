@@ -1,8 +1,9 @@
 import { gql, request } from "graphql-request";
+import { FetchShoppingItemsResponse, ShoppingItem } from "../types";
 
 const API_URL = "http://localhost:4000/graphql";
 
-export const fetchItems = async () =>
+export const fetchItems = async (): Promise<FetchShoppingItemsResponse> =>
   request(
     API_URL,
     gql`
@@ -11,23 +12,28 @@ export const fetchItems = async () =>
           id
           name
           quantity
+          createdAt
         }
       }
     `
   );
-export const addItem = async (name: string, quantity: number) =>
+
+export const addItem = async (
+  createShoppingItemDto: Pick<ShoppingItem, "name" | "quantity">
+) =>
   request(
     API_URL,
     gql`
-      mutation ($name: String!, $quantity: Int!) {
-        createShoppingItem(name: $name, quantity: $quantity) {
+      mutation ($createShoppingItemDto: CreateShoppingItemDto!) {
+        createShoppingItem(createShoppingItemDto: $createShoppingItemDto) {
           id
           name
           quantity
+          createdAt
         }
       }
     `,
-    { name, quantity }
+    { createShoppingItemDto }
   );
 
 export const deleteItem = async (id: string) =>
